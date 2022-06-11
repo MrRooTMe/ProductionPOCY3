@@ -513,13 +513,10 @@ You will need to add these parameter names to the integration settings.</p>
 <p>These steps describe how to prepare your project for deployment. This is relevant to both the Launch option as well as the "File &gt; Package Project" menu item.<br />
 If any platforms require specific steps, they can be found in <a href="platform-specifics.html">Platform Specifics</a>.</p>
 <h3 id="packaging-banks"><a href="#packaging-banks">2.15.1 Packaging banks</a></h3>
-<p>The directory containing the built FMOD banks should be added to the "Additional Non-Asset Directories To Copy" list, and directories containing generated assets should be added to the "Additional Non-Asset Directories To Cook" list. You will be prompted to do this in the FMOD Studio settings pane of Unreal project settings ("Edit &gt; Project Settings &gt; FMOD Studio"):</p>
+<p>The directory containing the built FMOD banks should be added to the "Additional Non-Asset Directories To Copy" list. You will be prompted to do this in the FMOD Studio settings pane of Unreal project settings ("Edit &gt; Project Settings &gt; FMOD Studio"):</p>
 <p><img alt="Project deployment" src="images/project-deploy.png" /></p>
-<p>This can also be done manually by selecting the "Edit &gt; Project Settings..." menu item and navigating to the Packaging section from the left hand pane, under the Project heading and adding the bank output directory to the "Additional Non-Asset Directories To Copy" list.<br />
-Generated assests can be manually added to the "Additional Non-Asset Directories To Cook" list in the same way.</p>
-<p><img alt="Additional non-asset directories" src="images/additional-non-asset-directories.png" /></p>
+<p>This can also be done manually by selecting the "Edit &gt; Project Settings..." menu item and navigating to the Packaging section from the left hand pane, under the Project heading and adding the bank output directory to the "Additional Non-Asset Directories To Copy" list.</p>
 <p>When the bank output directory is added to the "Additional Non-Asset Directories To Copy" list the banks will be copied as loose files when packaging your project. This is the recommended approach. It is possible to have the banks added to Unreal's .PAK file by adding the bank output directory to the "Additional Non-Asset Directories to Package" list, but we no longer recommend this approach because adding the banks to the .PAK file can lead to the packaged project deadlocking in the filesystem.</p>
-<p>When directories are included in the "Additional Non-Asset Directories To Cook" list Unreal's default cooking behaviour, cooking all maps during packaging, will no longer occur. If you want to re-enable this behaviour you can tick "Cook everything in the project content directory (ignore list of maps below)".</p>
 <h3 id="mutli-platform-builds"><a href="#mutli-platform-builds">2.15.2 Mutli-platform builds</a></h3>
 <p>By default the directory containing banks for the "Desktop" platform is added to the "Additional Non-Asset Directories To Copy" list and the banks for the Desktop platform are the ones which will be available at runtime. This is usually correct for the Windows, Mac and Linux platforms.</p>
 <p>For other platforms the relevant <code>PlatformGame.ini</code> file can be edited so the correct platform-specific banks are copied instead. See <a href="platform-specifics.html">Platform Specifics</a> for details.</p>
@@ -629,7 +626,7 @@ Now it is possible to add these generated assets to source control which will re
 </ul>
 <p>This can be especially useful for build machines that don't normally run the Editor at all, which is what normally triggers the assets to be built, and does not require the generated assets to be checked in to source control.</p></div>
 
-<p class="manual-footer">Unreal Integration 2.02.07 (2022-05-18). &copy; 2022 Firelight Technologies Pty Ltd.</p>
+<p class="manual-footer">Unreal Integration 2.02.06 (2022-03-16). &copy; 2022 Firelight Technologies Pty Ltd.</p>
 </body>
 </html>
 
